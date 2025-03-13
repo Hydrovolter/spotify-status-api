@@ -44,7 +44,7 @@ https://accounts.spotify.com/authorize?client_id={SPOTIFY_CLIENT_ID}&response_ty
 
 - After logging in, save the {CODE} portion of: `http://localhost/callback/?code={CODE}`
 
-- Create a string combining `{SPOTIFY_CLIENT_ID}:{SPOTIFY_CLIENT_SECRET}` (e.g. `5n7o4v5a3t7o5r2e3m1:5a8n7d3r4e2w5n8o2v3a7c5`) and **encode** into [Base64](https://base64.io/).
+- Create a string combining `{SPOTIFY_CLIENT_ID}:{SPOTIFY_CLIENT_SECRET}` (e.g. `5n7o4v5a3t7o5r2e3m1:5a8n7d3r4e2w5n8o2v3a7c5`) and **encode** into [Base64](https://tools.hydrovolter.com/base64).
 
 - Then run a [curl command](https://httpie.org/run) in the form of:
 
@@ -72,8 +72,6 @@ curl -X POST -H "Content-Type: application/x-www-form-urlencoded" -H "Authorizat
 - Deploy!
 
 ### Deploy to Heroku
-
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new?template=https%3A%2F%2Fgithub.com%2Fnovatorem%2Fnovatorem)
 
 - Create a Heroku application via the Heroku CLI or via the Heroku Dashboard. Connect the app with your GitHub repository and enable automatic builds <br>
   `PS. automatic build means that everytime you push changes to remote, heroku will rebuild and redeploy the app.`
@@ -116,9 +114,9 @@ Remove the `#` in front of `contentBar` in [line 81](https://github.com/novatore
 
 Have a string saying either "Vibing to:" or "Last seen playing:".
 
-- Change [`height` to `height + 40`](https://github.com/novatorem/novatorem/blob/5194a689253ee4c89a9d365260d6050923d93dd5/api/templates/spotify.html.j2#L1-L2) (or whatever `margin-top` is set to)
-- Uncomment [**.main**'s `margin-top`](https://github.com/novatorem/novatorem/blob/5194a689253ee4c89a9d365260d6050923d93dd5/api/templates/spotify.html.j2#L10)
-- Uncomment [currentStatus](https://github.com/novatorem/novatorem/blob/5194a689253ee4c89a9d365260d6050923d93dd5/api/templates/spotify.html.j2#L93)
+- Change `height` to `height + 40` (or whatever `margin-top` is set to) (PATH: /api/templates/spotify.html.j2 Line 1-2)
+- Uncomment **.main**'s `margin-top` (PATH: /api/templates/spotify.html.j2 Line 10)
+- Uncomment currentStatus (PATH: /api/templates/spotify.html.j2 Line 93)
 
 ### Theme Templates
 
