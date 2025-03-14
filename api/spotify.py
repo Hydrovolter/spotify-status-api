@@ -162,7 +162,7 @@ def makeSVG(data, background_color, border_color):
 
     return render_template(getTemplate(), **dataDict)
 
-@app.route('/api/spotify/json')
+@app.route('/test')
 def spotify_json():
     try:
         data = get(NOW_PLAYING_URL)
