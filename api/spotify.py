@@ -162,34 +162,6 @@ def makeSVG(data, background_color, border_color):
 
     return render_template(getTemplate(), **dataDict)
 
-@app.route('/test')
-def spotify_json():
-    try:
-        data = get(NOW_PLAYING_URL)
-    except Exception:
-        data = get(RECENTLY_PLAYING_URL)
-
-    if "is_playing" in data:
-        item = data["item"]
-    else:
-        recent_plays = get(RECENTLY_PLAYING_URL)
-        recent_plays_length = len(recent_plays["items"])
-        item_index = random.randint(0, recent_plays_length - 1)
-        item = recent_plays["items"][item_index]["track"]
-
-    if item["album"]["images"]:
-        image_url = item["album"]["images"][1]["url"]
-    else:
-        image_url = PLACEHOLDER_URL
-
-    result = {
-        "title": item["name"],
-        "artist": item["artists"][0]["name"],
-        "image": image_url,
-    }
-
-    return jsonify(result)
-
 @app.route("/", defaults={"path": ""})
 @app.route("/<path:path>")
 @app.route('/with_parameters')
