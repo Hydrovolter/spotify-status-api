@@ -162,6 +162,16 @@ def makeSVG(data, background_color, border_color):
 
     return render_template(getTemplate(), **dataDict)
 
+@app.route("/json")
+def json_output():
+    try:
+        data = get(NOW_PLAYING_URL)
+    except Exception:
+        data = get(RECENTLY_PLAYING_URL)
+
+    return jsonify(data)
+
+
 @app.route("/", defaults={"path": ""})
 @app.route("/<path:path>")
 @app.route('/with_parameters')
