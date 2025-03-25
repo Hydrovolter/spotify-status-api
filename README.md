@@ -1,4 +1,4 @@
-# Spotify Status API
+# Spotify Status Widget
 Real-time profile README displaying currently playing song on Spotify using the Spotify API.
 
 &nbsp;<div align="center">
