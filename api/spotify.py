@@ -129,7 +129,7 @@ def makeSVG(data, background_color, border_color):
         item = recentPlays["items"][itemIndex]["track"]
     else:
         item = data["item"]
-        currentStatus = "Currently Playing:"
+        currentStatus = "Listening to:"
 
     if item["album"]["images"] == []:
         image = PLACEHOLDER_IMAGE
